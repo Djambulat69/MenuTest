@@ -16,6 +16,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -39,19 +40,22 @@ class MainActivity : ComponentActivity() {
                     Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
                         Column {
                             Box(contentAlignment = Alignment.TopCenter) {
+                                val heightDp = 176.dp
+                                val heightPx = LocalDensity.current.run { heightDp.toPx() }
+
                                 Image(
                                     painter = painterResource(R.drawable.tree_bg),
                                     contentDescription = null,
                                     contentScale = ContentScale.FillWidth,
                                     modifier = Modifier
                                         .fillMaxWidth()
-                                        .height(176.dp)
+                                        .height(heightDp)
                                         .drawWithContent {
                                             drawContent()
                                             drawRect(
                                                 brush = Brush.verticalGradient(
                                                     colors = listOf(Color.Transparent, Color.White),
-                                                    startY = 0.7f
+                                                    startY = 0.4f * (heightPx)
                                                 )
                                             )
                                         }

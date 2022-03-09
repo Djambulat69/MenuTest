@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MenuTest</string>
+    
+    <string name="settings">Настройки</string>
+    <string name="tarifes">Тарифы</string>
+    <string name="help">Помощь</string>
+    <string name="about_app">О приложении</string>
+    <string name="privacy_policy">Политика конфидециальности</string>
 </resources>

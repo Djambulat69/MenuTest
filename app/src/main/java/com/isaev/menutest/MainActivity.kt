@@ -22,6 +22,7 @@ import androidx.core.view.WindowCompat
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.insets.statusBarsHeight
 import com.isaev.menutest.ui.theme.MenuTestTheme
+import com.isaev.menutest.ui.theme.Red
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -90,6 +91,16 @@ class MainActivity : ComponentActivity() {
                                     )
                                 }
                             }
+                            Text(
+                                text = stringResource(R.string.logout),
+                                style = MaterialTheme.typography.h5,
+                                textAlign = TextAlign.Center,
+                                color = Red,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .clickable { }
+                                    .padding(vertical = 32.dp)
+                            )
                         }
                     }
                 }
